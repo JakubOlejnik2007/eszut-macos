@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import MSAL
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
