@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		48612C902E648A0B00E78FA1 /* MSAL in Frameworks */ = {isa = PBXBuildFile; productRef = 48612C8F2E648A0B00E78FA1 /* MSAL */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		48612C722E6481C800E78FA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,22 @@
 		48612C7B2E6481C800E78FA1 /* eszut-macosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eszut-macosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		48612C922E64902E00E78FA1 /* Exceptions for "eszut-macos" folder in "eszut-macos" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 48612C5F2E6481C500E78FA1 /* eszut-macos */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		48612C622E6481C500E78FA1 /* eszut-macos */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				48612C922E64902E00E78FA1 /* Exceptions for "eszut-macos" folder in "eszut-macos" target */,
+			);
 			path = "eszut-macos";
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48612C902E648A0B00E78FA1 /* MSAL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +130,7 @@
 			);
 			name = "eszut-macos";
 			packageProductDependencies = (
+				48612C8F2E648A0B00E78FA1 /* MSAL */,
 			);
 			productName = "eszut-macos";
 			productReference = 48612C602E6481C500E78FA1 /* eszut-macos.app */;
@@ -195,6 +214,9 @@
 			);
 			mainGroup = 48612C572E6481C500E78FA1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				48612C8E2E648A0B00E78FA1 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 48612C612E6481C500E78FA1 /* Products */;
 			projectDirPath = "";
@@ -399,6 +421,7 @@
 				DEVELOPMENT_TEAM = 7TJC6WUDSF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "eszut-macos/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -427,6 +450,7 @@
 				DEVELOPMENT_TEAM = 7TJC6WUDSF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "eszut-macos/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -551,6 +575,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48612C8E2E648A0B00E78FA1 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AzureAD/microsoft-authentication-library-for-objc";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48612C8F2E648A0B00E78FA1 /* MSAL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48612C8E2E648A0B00E78FA1 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */;
+			productName = MSAL;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48612C582E6481C500E78FA1 /* Project object */;
 }
