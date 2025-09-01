@@ -7,13 +7,14 @@ class ViewController: NSViewController {
     let kRedirectUri = "msauth.jo.eszut-macos://auth"
     let kAuthority = "https://login.microsoftonline.com/84867874-5f7d-4b12-b070-d6cea5a3265e"
     let kGraphEndpoint = "https://graph.microsoft.com/"
-    let kScopes = ["User.Read"]
+    let kScopes = ["api://e4c482a1-9923-4462-bf05-b70d64942c19/App"]
 
     var applicationContext: MSALPublicClientApplication!
     var webViewParams: MSALWebviewParameters!
 
     @IBOutlet weak var loginButton: NSButton!
 
+    @IBOutlet weak var accountLabel: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         initMSAL()
@@ -37,6 +38,38 @@ class ViewController: NSViewController {
         }
     }
 
+    func getAPITokens(MSAL_TOKEN: String) {
+        var components = URLComponents(string: "https://eszut-api.tenco.waw.pl/set-tokens")!
+        
+        components.queryItems = [
+            URLQueryItem(name: "MSAL_TOKEN", value: MSAL_TOKEN)
+        ]
+        
+        let url = components.url!
+        
+        print(url.absoluteString)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in if let error = error {
+                print("Błąd:", error)
+                return
+            }
+            if let data = data, let body = String(data: data, encoding: .utf8) {
+                    print("Response:", body)
+                }
+            }
+        
+        task.resume()
+        }
+    
+        
+        
+        
+    
+    
     func acquireToken() {
         let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParameters: webViewParams)
         applicationContext.acquireToken(with: parameters) { result, error in
@@ -47,6 +80,9 @@ class ViewController: NSViewController {
             guard let result = result else { return }
             print("Access token: \(result.accessToken)")
             print("Account: \(result.account.username ?? "")")
+            self.accountLabel.stringValue = result.account.username ?? ""
+            
+            self.getAPITokens(MSAL_TOKEN: result.accessToken)
         }
     }
 }
