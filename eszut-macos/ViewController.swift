@@ -20,14 +20,28 @@ class ViewController: NSViewController {
         initMSAL()
     }
 
-    @IBAction func touchLoginButtonClicked(_ sender: Any) {
+    //Configure the touchbar
+    @IBOutlet var myTouchBar: NSTouchBar!
+    override func makeTouchBar() -> NSTouchBar? {
+        return myTouchBar
+    }
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window?.makeFirstResponder(self)
+    }
+    //touchbar configured.
+    @IBAction func TouchLoginButtonTouched(_ sender: Any) {
         acquireToken()
     }
-
+    
+    
+    
+    
     @IBAction func loginButtonClicked(_ sender: NSButton) {
         acquireToken()
     }
-
+ 
+    
     func initMSAL() {
         guard let authorityURL = URL(string: kAuthority) else { return }
         do {
