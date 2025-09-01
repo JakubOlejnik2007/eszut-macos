@@ -20,6 +20,7 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <segue destination="LJI-ui-1aJ" kind="show" id="VeX-Po-Xrq"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -711,7 +712,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="203"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="gua-AW-c5u">
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="headerView" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="gua-AW-c5u">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="203"/>
                                 <subviews>
                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXj-cw-wk8">
@@ -757,8 +758,81 @@
             </objects>
             <point key="canvasLocation" x="75" y="621.5"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="cfq-c7-uDL">
+            <objects>
+                <windowController id="LJI-ui-1aJ" sceneMemberID="viewController">
+                    <window key="window" title="O aplikacji" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="8jC-rS-AIe">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="311" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <view key="contentView" id="WL8-u9-Yoq">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="LJI-ui-1aJ" id="rUb-JY-gAw"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="Dw8-K3-dIn" kind="relationship" relationship="window.shadowedContentViewController" id="gA8-q9-jCv"/>
+                    </connections>
+                </windowController>
+                <customObject id="kS5-Cm-BNw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="20"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fZP-RU-rSy">
+            <objects>
+                <viewController id="Dw8-K3-dIn" sceneMemberID="viewController">
+                    <view key="view" id="fdU-BD-16k">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="171"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOl-Hy-xjW">
+                                <rect key="frame" x="20" y="84" width="67" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="logo" id="xA8-Do-Z9o"/>
+                            </imageView>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-KW-uM1">
+                                <rect key="frame" x="84" y="111" width="268" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="ESZUT Desktop" id="3RK-xI-HjU">
+                                    <font key="font" metaFont="systemThin" size="34"/>
+                                    <color key="textColor" red="1" green="0.26666668059999998" blue="0.270588249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgj-kW-hsM">
+                                <rect key="frame" x="106" y="87" width="105" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version: 1.0 Beta" id="4me-JP-nLB">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BaM-e0-Mug">
+                                <rect key="frame" x="18" y="20" width="227" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Mateusz Stoch &amp; Jakub Olejnik 2025" id="n1K-hl-p6R">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="4Hc-dK-GPD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246" y="-39.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="logo" width="827" height="827"/>
         <image name="logoGhost" width="1512" height="1512"/>
     </resources>
 </document>
