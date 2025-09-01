@@ -20,10 +20,10 @@ class ViewController: NSViewController {
         initMSAL()
     }
 
-    @IBAction func TouchLoginButtonClicked(_ sender: Any) {
+    @IBAction func touchLoginButtonClicked(_ sender: Any) {
         acquireToken()
-
     }
+
     @IBAction func loginButtonClicked(_ sender: NSButton) {
         acquireToken()
     }
