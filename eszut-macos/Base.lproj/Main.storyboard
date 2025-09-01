@@ -490,13 +490,13 @@
                             <constraint firstItem="gua-AW-c5u" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="eMk-qC-Mu6"/>
                         </constraints>
                     </view>
-                    <touchBar key="touchBar" customizationIdentifier="Login" id="cSl-CL-BGw">
+                    <touchBar key="touchBar" customizationIdentifier="Login" id="cSl-CL-BGw" userLabel="login Touchbar">
                         <touchBarItems>
+                            <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFlexibleSpace" id="MTj-DA-aRz"/>
                             <touchBarItem id="KTY-e2-gQy">
                                 <viewController key="viewController" id="zqA-ge-4u2">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wTG-AM-6bd">
-                                        <rect key="frame" x="7" y="-5" width="72" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
                                         <buttonCell key="cell" type="push" title="zaloguj" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CCs-yf-y34">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -507,19 +507,20 @@
                                     </button>
                                 </viewController>
                             </touchBarItem>
+                            <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFixedSpaceSmall" id="hGc-lA-5us"/>
                             <touchBarItem id="QXQ-f1-IN9">
                                 <viewController key="viewController" id="VP3-XN-doh">
                                     <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-ay-WJm">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="nie dziaba" id="njK-Od-KlJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="385" height="18"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Jesteś wylogowany. Zaloguj się, by kożystać z systemu" id="njK-Od-KlJ">
                                             <font key="font" usesAppearanceFont="YES"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                 </viewController>
                             </touchBarItem>
+                            <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFlexibleSpace" id="NHF-7Z-Uwc"/>
                         </touchBarItems>
                     </touchBar>
                     <connections>
@@ -531,7 +532,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="621.5"/>
+            <point key="canvasLocation" x="75" y="757"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="cfq-c7-uDL">
