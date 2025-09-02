@@ -1,6 +1,13 @@
 import Cocoa
 import MSAL
 
+struct TokenData: Codable {
+    let userId: String
+    let username: String
+    let email: String
+    let role: Int
+}
+
 class ViewController: NSViewController {
 
     let kClientID = "e4c482a1-9923-4462-bf05-b70d64942c19"
@@ -71,14 +78,24 @@ class ViewController: NSViewController {
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) {
-            data, response, error in if let error = error {
+            data, response, error in
+            if let error = error {
                 print("Błąd:", error)
                 return
             }
             if let data = data, let body = String(data: data, encoding: .utf8) {
-                    print("Response:", body)
+                print("Response:", body)
+                do {
+                    let parsedData = try JSONDecoder().decode(TokenData.self, from: data)
+                    DispatchQueue.main.async {
+                        AppState.shared.userEmail = parsedData.email
+                        AppState.shared.username = parsedData.username
+                    }
+                } catch {
+                    print("Decode error:", error)
                 }
             }
+        }
         
         task.resume()
         }
