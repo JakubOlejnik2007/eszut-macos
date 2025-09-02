@@ -502,6 +502,7 @@
                                 <viewController key="viewController" id="zqA-ge-4u2">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wTG-AM-6bd">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="zaloguj" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CCs-yf-y34">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -517,6 +518,7 @@
                                 <viewController key="viewController" id="VP3-XN-doh">
                                     <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-ay-WJm">
                                         <rect key="frame" x="0.0" y="0.0" width="385" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Jesteś wylogowany. Zaloguj się, by kożystać z systemu" id="njK-Od-KlJ">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -538,6 +540,90 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="757"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="ThW-gz-EyJ">
+            <objects>
+                <windowController storyboardIdentifier="MainWindow" id="dfD-lF-CSa" sceneMemberID="viewController">
+                    <window key="window" title="Zgłoszenia" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NEi-aA-w9t">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="311" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <view key="contentView" id="CjO-fd-7tu">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" explicitIdentifier="MainWindowToolbar" autosavesConfiguration="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="0da-UB-wSb">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="7pm-GX-wZ2"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="yb3-PV-rV4"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="eOR-1h-h9M"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems/>
+                        </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="dfD-lF-CSa" id="Zkf-Ae-F3o"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="d3z-5j-aYq" kind="relationship" relationship="window.shadowedContentViewController" id="y5T-vz-TTx"/>
+                    </connections>
+                </windowController>
+                <customObject id="Pxs-MH-Umn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="1465"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="qOm-O5-tAN">
+            <objects>
+                <splitViewController id="d3z-5j-aYq" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="oIK-Nq-ii8"/>
+                        <splitViewItem id="S4J-bx-aIj"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="Oxv-vH-faH">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="KRb-zZ-VIk" kind="relationship" relationship="splitItems" id="eVU-1p-jSS"/>
+                        <segue destination="Gzv-Cg-cEU" kind="relationship" relationship="splitItems" id="rJf-4a-WUF"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="ImM-yG-VgO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660" y="1301"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PNl-VU-aD0">
+            <objects>
+                <viewController id="KRb-zZ-VIk" sceneMemberID="viewController">
+                    <view key="view" id="sEa-jY-3EF">
+                        <rect key="frame" x="0.0" y="0.0" width="149" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <viewLayoutGuide key="safeArea" id="zo6-IC-RUl"/>
+                        <viewLayoutGuide key="layoutMargins" id="TKq-wc-7Qe"/>
+                    </view>
+                </viewController>
+                <customObject id="K14-N4-Qh7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="1115"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3A4-Nk-m6f">
+            <objects>
+                <viewController id="Gzv-Cg-cEU" sceneMemberID="viewController">
+                    <view key="view" id="ZI2-VB-ZWQ">
+                        <rect key="frame" x="0.0" y="0.0" width="302" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <viewLayoutGuide key="safeArea" id="kKq-Ff-r5J"/>
+                        <viewLayoutGuide key="layoutMargins" id="w8s-gv-pLQ"/>
+                    </view>
+                </viewController>
+                <customObject id="jXG-lN-Izf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="1487"/>
         </scene>
         <!--About-->
         <scene sceneID="cfq-c7-uDL">

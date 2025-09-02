@@ -11,7 +11,8 @@ class ViewController: NSViewController {
 
     var applicationContext: MSALPublicClientApplication!
     var webViewParams: MSALWebviewParameters!
-
+    var mainWindowController: NSWindowController?
+    
     @IBOutlet weak var loginButton: NSButton!
 
     @IBOutlet weak var accountLabel: NSTextField!
@@ -33,10 +34,6 @@ class ViewController: NSViewController {
     @IBAction func TouchLoginButtonTouched(_ sender: Any) {
         acquireToken()
     }
-    
-    
-    
-    
     @IBAction func loginButtonClicked(_ sender: NSButton) {
         acquireToken()
     }
@@ -101,6 +98,18 @@ class ViewController: NSViewController {
             self.accountLabel.stringValue = result.account.username ?? ""
             
             self.getAPITokens(MSAL_TOKEN: result.accessToken)
+            
+            DispatchQueue.main.async {
+                if self.mainWindowController == nil {
+                    let storyboard = NSStoryboard(name: "Main", bundle: nil)
+                    self.mainWindowController = storyboard.instantiateController(withIdentifier: "MainWindow") as? NSWindowController
+                }
+                self.mainWindowController?.showWindow(self)
+                self.mainWindowController?.window?.makeKeyAndOrderFront(self)
+            }
+            self.view.window?.close()
         }
+        
+        
     }
 }
