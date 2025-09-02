@@ -1,11 +1,17 @@
 import Cocoa
 import MSAL
 
-struct TokenData: Codable {
+
+struct UserData: Codable {
     let userId: String
     let username: String
     let email: String
     let role: Int
+}
+
+struct TokenResponseData: Codable {
+    let accessToken: String
+    let user: UserData
 }
 
 class ViewController: NSViewController {
@@ -83,10 +89,10 @@ class ViewController: NSViewController {
             if let data = data, let body = String(data: data, encoding: .utf8) {
                 print("Response:", body)
                 do {
-                    let parsedData = try JSONDecoder().decode(TokenData.self, from: data)
+                    let parsedData = try JSONDecoder().decode(TokenResponseData.self, from: data)
                     DispatchQueue.main.async {
-                        AppState.shared.userEmail = parsedData.email
-                        AppState.shared.username = parsedData.username
+                        AppState.shared.userEmail = parsedData.user.email
+                        AppState.shared.username = parsedData.user.username
                     }
                 } catch {
                     print("Decode error:", error)

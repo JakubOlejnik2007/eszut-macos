@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="23010"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
@@ -730,10 +730,10 @@
             </objects>
             <point key="canvasLocation" x="1791.5" y="-149"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="3Ij-bs-WFy">
             <objects>
-                <viewController id="LdW-qe-Ivq" sceneMemberID="viewController">
+                <viewController id="LdW-qe-Ivq" customClass="AccountViewController" customModule="eszut_macos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="gY6-Du-7By">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -786,6 +786,10 @@
                         <viewLayoutGuide key="safeArea" id="dcE-rj-qLx"/>
                         <viewLayoutGuide key="layoutMargins" id="Ohh-2c-zmj"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="VL8-r9-1jM" id="8mE-PD-zV7"/>
+                        <outlet property="usernameLabel" destination="6gj-3I-tbL" id="fU1-BP-fZk"/>
+                    </connections>
                 </viewController>
                 <customObject id="HWE-wS-E8d" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
