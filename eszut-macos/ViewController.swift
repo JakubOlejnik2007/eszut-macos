@@ -92,6 +92,7 @@ class ViewController: NSViewController {
                     DispatchQueue.main.async {
                         AppState.shared.userEmail = parsedData.user.email
                         AppState.shared.username = parsedData.user.username
+                        AppState.shared.isUserLogged = true
                     }
                 } catch {
                     print("Decode error:", error)

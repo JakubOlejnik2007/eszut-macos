@@ -8,12 +8,15 @@ class AccountViewController: NSViewController {
     @IBOutlet weak var usernameLabel: NSTextField!
     @IBOutlet weak var emailLabel: NSTextField!
     
+    @IBOutlet weak var logoutButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         usernameLabel.stringValue = AppState.shared.username ?? "Brak nazwy użytkownika"
         emailLabel.stringValue = AppState.shared.userEmail ?? "Brak adresu e-mail"
+        
+        logoutButton.isEnabled = AppState.shared.isUserLogged
     }
     @IBAction func logoutButtonTapped(_ sender: Any) {
         AppState.shared.logout()

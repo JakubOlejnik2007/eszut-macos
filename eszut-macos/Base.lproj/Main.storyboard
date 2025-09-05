@@ -460,7 +460,7 @@
                             <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="headerView" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="gua-AW-c5u">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="203"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXj-cw-wk8">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXj-cw-wk8">
                                         <rect key="frame" x="33" y="107" width="219" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Jesteś Wylogowany" id="oxO-Ll-pDx">
@@ -516,7 +516,7 @@
                             <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFixedSpaceSmall" id="hGc-lA-5us"/>
                             <touchBarItem id="QXQ-f1-IN9">
                                 <viewController key="viewController" id="VP3-XN-doh">
-                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-ay-WJm">
+                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-ay-WJm">
                                         <rect key="frame" x="0.0" y="0.0" width="385" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Jesteś wylogowany. Zaloguj się, by kożystać z systemu" id="njK-Od-KlJ">
@@ -738,7 +738,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzG-fP-83G">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzG-fP-83G">
                                 <rect key="frame" x="18" y="209" width="105" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Twoje Konto:" id="jsd-hn-iTv">
@@ -747,7 +747,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VL8-r9-1jM">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VL8-r9-1jM">
                                 <rect key="frame" x="30" y="155" width="246" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="stoch.mateusz@zstz-radzymin.pl" id="HUm-yM-woW">
@@ -756,7 +756,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-2g-EnU">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-2g-EnU">
                                 <rect key="frame" x="30" y="20" width="323" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" title="Aplikacja ESZUT Desktop oraz system ESZUT nie zapisuje twoich danych osobowych." id="uhe-ex-Za5">
@@ -776,7 +776,7 @@
                                     <action selector="logoutButtonTapped:" target="LdW-qe-Ivq" id="e8F-GC-usT"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-3I-tbL">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-3I-tbL">
                                 <rect key="frame" x="30" y="182" width="113" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Stoch Mateusz" id="rM2-24-kgT">
@@ -791,6 +791,7 @@
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="VL8-r9-1jM" id="8mE-PD-zV7"/>
+                        <outlet property="logoutButton" destination="y4l-2z-rZg" id="Dgj-ex-7Tx"/>
                         <outlet property="usernameLabel" destination="6gj-3I-tbL" id="fU1-BP-fZk"/>
                     </connections>
                 </viewController>
@@ -811,7 +812,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="logo" id="xA8-Do-Z9o"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-KW-uM1">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-KW-uM1">
                                 <rect key="frame" x="84" y="111" width="268" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="ESZUT Desktop" id="3RK-xI-HjU">
@@ -820,7 +821,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgj-kW-hsM">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgj-kW-hsM">
                                 <rect key="frame" x="106" y="87" width="105" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Version: 1.0 Beta" id="4me-JP-nLB">
@@ -829,7 +830,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BaM-e0-Mug">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BaM-e0-Mug">
                                 <rect key="frame" x="18" y="20" width="227" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Mateusz Stoch &amp; Jakub Olejnik 2025" id="n1K-hl-p6R">
@@ -853,7 +854,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h39-4W-Kdq">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h39-4W-Kdq">
                                 <rect key="frame" x="18" y="209" width="156" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Preferencje ogólne:" id="sRc-rm-Lku">
