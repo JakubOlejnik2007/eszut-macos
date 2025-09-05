@@ -34,7 +34,6 @@ class ViewController: NSViewController {
         initMSAL()
     }
 
-    //Configure the touchbar
     @IBOutlet var myTouchBar: NSTouchBar!
     override func makeTouchBar() -> NSTouchBar? {
         return myTouchBar
@@ -43,7 +42,7 @@ class ViewController: NSViewController {
         super.viewDidAppear()
         self.view.window?.makeFirstResponder(self)
     }
-    //touchbar configured.
+    
     @IBAction func TouchLoginButtonTouched(_ sender: Any) {
         acquireToken()
     }
@@ -130,6 +129,7 @@ class ViewController: NSViewController {
                 self.mainWindowController?.showWindow(self)
                 self.mainWindowController?.window?.makeKeyAndOrderFront(self)
             }
+            AppState.shared.isLoginWindowOpen = false
             self.view.window?.close()
         }
         

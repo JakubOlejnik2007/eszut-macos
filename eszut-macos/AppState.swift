@@ -10,8 +10,19 @@ import Foundation
 class AppState {
     static let shared = AppState()
     
-    private init(){}
+    private init(){
+    }
     
     var username: String?
     var userEmail: String?
+    
+    var isUserLogged: Bool = false
+    var isLoginWindowOpen: Bool = false
+    
+    
+    func logout() {
+        username = nil
+        userEmail = nil
+        isUserLogged = false
+    }
 }
