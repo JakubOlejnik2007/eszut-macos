@@ -32,6 +32,10 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initMSAL()
+        
+        print(KeychainHelper.shared.getToken(account: "eszut-macos"))
+        
+        
     }
 
     @IBOutlet var myTouchBar: NSTouchBar!
@@ -93,7 +97,12 @@ class ViewController: NSViewController {
                         AppState.shared.userEmail = parsedData.user.email
                         AppState.shared.username = parsedData.user.username
                         AppState.shared.isUserLogged = true
+                        self.saveTokenAlert(token: parsedData.accessToken)
                     }
+                    
+                    
+                    
+                    
                 } catch {
                     print("Decode error:", error)
                 }
@@ -104,7 +113,19 @@ class ViewController: NSViewController {
         }
     
         
+    func saveTokenAlert(token: String) {
+        let alert = NSAlert()
+        alert.messageText = "Wygenerować i zachować token dostępu na 30 dni?"
+        alert.addButton(withTitle: "Tak")
+        alert.addButton(withTitle: "Nie")
         
+        let response = alert.runModal()
+        if response == .alertFirstButtonReturn {
+            KeychainHelper.shared.saveToken(token, account: "eszut-macos")
+        }
+    }
+    
+    
         
     
     
@@ -132,6 +153,7 @@ class ViewController: NSViewController {
             }
             AppState.shared.isLoginWindowOpen = false
             self.view.window?.close()
+            
         }
         
         
