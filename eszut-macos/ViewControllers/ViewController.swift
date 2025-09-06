@@ -17,13 +17,22 @@ class ViewController: NSViewController {
     @IBOutlet weak var loginButton: NSButton!
 
     @IBOutlet weak var accountLabel: NSTextField!
+                                           
     override func viewDidLoad() {
         super.viewDidLoad()
         initMSAL()
         
         print(KeychainHelper.shared.getToken(account: "eszut-macos"))
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.closeWindow(_:)), name: .userDidLogin, object: nil)
         
+    }
+                                           
+     
+    @objc func closeWindow(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+                self?.view.window?.close()
+            }
     }
 
     @IBOutlet var myTouchBar: NSTouchBar!
@@ -85,9 +94,11 @@ class ViewController: NSViewController {
                         AppState.shared.userEmail = parsedData.user.email
                         AppState.shared.username = parsedData.user.username
                         AppState.shared.isUserLogged = true
+                        
+                        NotificationCenter.default.post(name: .userDidLogin, object: nil)
+                        
                         self.saveTokenAlert(token: parsedData.accessToken)
                     }
-                    
                     
                     
                     
@@ -139,11 +150,13 @@ class ViewController: NSViewController {
                 self.mainWindowController?.showWindow(self)
                 self.mainWindowController?.window?.makeKeyAndOrderFront(self)
             }
-            AppState.shared.isLoginWindowOpen = false
-            self.view.window?.close()
             
         }
         
         
     }
+                  
+                  deinit {
+                      NotificationCenter.default.removeObserver(self)
+                  }
 }
