@@ -1,18 +1,6 @@
 import Cocoa
 import MSAL
-
-
-struct UserData: Codable {
-    let userId: String
-    let username: String
-    let email: String
-    let role: Int
-}
-
-struct TokenResponseData: Codable {
-    let accessToken: String
-    let user: UserData
-}
+import Foundation
 
 class ViewController: NSViewController {
 

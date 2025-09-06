@@ -1,6 +1,15 @@
 {
-  "originHash" : "0210b0d8bdf78f3ea275a5e0688a6bda67366a571df9b9fc7728e8d3a46f78a2",
+  "originHash" : "a105e077f9b1099c9128e6e195bc82db3d14685e8c8c985af849558b5549e4a9",
   "pins" : [
+    {
+      "identity" : "jwtdecode.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/JWTDecode.swift",
+      "state" : {
+        "revision" : "36a5ce735a61c4bc119593f43ce2c027b4ca7392",
+        "version" : "3.3.0"
+      }
+    },
     {
       "identity" : "microsoft-authentication-library-for-objc",
       "kind" : "remoteSourceControl",
