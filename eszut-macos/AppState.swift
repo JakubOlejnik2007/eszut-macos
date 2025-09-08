@@ -11,18 +11,15 @@ class AppState {
     static let shared = AppState()
     
     private init(){
+        NotificationCenter.default.addObserver(self, selector: #selector(logout(_:)), name: .userDidLogout, object: nil)
     }
     
-    var username: String?
-    var userEmail: String?
+    var userData: UserData?
     
-    var isUserLogged: Bool = false
     var isLoginWindowOpen: Bool = false
     
     
-    func logout() {
-        username = nil
-        userEmail = nil
-        isUserLogged = false
+    @objc func logout(_ notification: Notification) {
+        userData = nil
     }
 }

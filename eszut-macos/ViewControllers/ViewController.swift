@@ -24,12 +24,21 @@ class ViewController: NSViewController {
         
         print(KeychainHelper.shared.getToken(account: "eszut-macos"))
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.closeWindow(_:)), name: .userDidLogin, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleUserDidLogin(_:)), name: .userDidLogin, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleUserDidLogin(_:)), name: .userHadToken, object: nil)
         
     }
+    
+    @objc func handleUserDidLogin(_ notification: Notification) {
+        closeWindow()
+        openMainWindow()
+    }
+    
+    
                                            
      
-    @objc func closeWindow(_ notification: Notification) {
+    func closeWindow() {
         DispatchQueue.main.async { [weak self] in
                 self?.view.window?.close()
             }
@@ -91,9 +100,7 @@ class ViewController: NSViewController {
                 do {
                     let parsedData = try JSONDecoder().decode(TokenResponseData.self, from: data)
                     DispatchQueue.main.async {
-                        AppState.shared.userEmail = parsedData.user.email
-                        AppState.shared.username = parsedData.user.username
-                        AppState.shared.isUserLogged = true
+                        AppState.shared.userData = parsedData.user
                         
                         NotificationCenter.default.post(name: .userDidLogin, object: nil)
                         
@@ -142,20 +149,23 @@ class ViewController: NSViewController {
             
             self.getAPITokens(MSAL_TOKEN: result.accessToken)
             
-            DispatchQueue.main.async {
-                if self.mainWindowController == nil {
-                    let storyboard = NSStoryboard(name: "Main", bundle: nil)
-                    self.mainWindowController = storyboard.instantiateController(withIdentifier: "MainWindow") as? NSWindowController
-                }
-                self.mainWindowController?.showWindow(self)
-                self.mainWindowController?.window?.makeKeyAndOrderFront(self)
-            }
+            
             
         }
         
         
     }
                   
+    func openMainWindow (){
+        DispatchQueue.main.async {
+            if self.mainWindowController == nil {
+                let storyboard = NSStoryboard(name: "Main", bundle: nil)
+                self.mainWindowController = storyboard.instantiateController(withIdentifier: "MainWindow") as? NSWindowController
+            }
+            self.mainWindowController?.showWindow(self)
+            self.mainWindowController?.window?.makeKeyAndOrderFront(self)
+        }
+    }
                   deinit {
                       NotificationCenter.default.removeObserver(self)
                   }

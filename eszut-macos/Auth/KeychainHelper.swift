@@ -53,4 +53,14 @@ class KeychainHelper {
         ]
         SecItemDelete(query as CFDictionary)
     }
+    
+    
+    @objc func logout(_ notification: Notification){
+        deleteToken(account: "eszut-macos")
+    }
+    
+    
+    init(){
+        NotificationCenter.default.addObserver(self, selector: #selector(logout(_:)), name: .userDidLogout, object: nil)
+    }
 }

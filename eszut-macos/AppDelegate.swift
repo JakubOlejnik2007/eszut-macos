@@ -15,7 +15,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        let token = KeychainHelper.shared.getToken(account: "eszut-macos") ?? ""
+        do {
+            let userdata = try JWTHelper.shared.decodeAccessToken(token)
+            
+            AppState.shared.userData = userdata
+            
+            NotificationCenter.default.post(name: .userHadToken, object: nil)
+        }
+        catch {
+            print("Error during decoding!")
+        }
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
