@@ -9,8 +9,8 @@ import Cocoa
 import MSAL
 
 @main
-class AppDelegate: NSObject, NSApplicationDelegate {
-
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+    var preferencesWindowController: PreferencesWindowController?
     
 
 
@@ -37,6 +37,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+    
+    @IBAction func openPreferences(_ sender: Any?) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        
+        if preferencesWindowController == nil {
+            preferencesWindowController = storyboard.instantiateController(withIdentifier: "PreferencesWindow") as? PreferencesWindowController
+        }
+
+        if let window = preferencesWindowController?.window {
+            window.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+        }
+    }
 
 }
 

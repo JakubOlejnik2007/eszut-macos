@@ -15,7 +15,7 @@ class PreferencesSplitViewController: NSSplitViewController {
     func showAccount() {
         guard splitViewItems.count > 1 else { return }
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let accountVC = storyboard.instantiateController(withIdentifier: "AccountViewController") as! NSViewController
+        let accountVC = storyboard.instantiateController(withIdentifier: "AccountView") as! NSViewController
 
         let oldItem = splitViewItems[1]
         removeSplitViewItem(oldItem)

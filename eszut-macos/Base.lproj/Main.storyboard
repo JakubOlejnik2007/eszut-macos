@@ -29,7 +29,7 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <segue destination="M7p-gg-dc4" kind="show" id="ycE-js-ZDd"/>
+                                                <action selector="openPreferences:" target="Voe-Tx-rLC" id="7PO-Ds-srW"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -653,7 +653,7 @@
         <!--Window Controller-->
         <scene sceneID="WFl-cN-w1u">
             <objects>
-                <windowController id="M7p-gg-dc4" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="PreferencesWindow" id="M7p-gg-dc4" customClass="PreferencesWindowController" customModule="eszut_macos" sceneMemberID="viewController">
                     <window key="window" title="Preferencje Eszuta" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="q30-j4-7iB">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
