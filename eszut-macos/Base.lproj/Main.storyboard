@@ -676,10 +676,10 @@
             </objects>
             <point key="canvasLocation" x="731" y="221"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Preferences Split View Controller-->
         <scene sceneID="jmw-5L-JBN">
             <objects>
-                <splitViewController id="pwN-Zv-kV1" sceneMemberID="viewController">
+                <splitViewController id="pwN-Zv-kV1" customClass="PreferencesSplitViewController" customModule="eszut_macos" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="mP0-wI-MDz"/>
                         <splitViewItem id="38j-mN-FEo"/>
@@ -697,10 +697,10 @@
             </objects>
             <point key="canvasLocation" x="1309.5" y="215.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Preferences Menu View Controller-->
         <scene sceneID="vJi-mw-xMV">
             <objects>
-                <viewController id="ifL-hX-7qp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreferencesMenuView" id="ifL-hX-7qp" customClass="PreferencesMenuViewController" customModule="eszut_macos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="KPJ-No-WKQ">
                         <rect key="frame" x="0.0" y="0.0" width="149" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -712,6 +712,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="settingsClicked:" target="ifL-hX-7qp" id="1rR-px-9jX"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-3U-hgd">
                                 <rect key="frame" x="13" y="198" width="123" height="23"/>
@@ -719,21 +722,28 @@
                                 <buttonCell key="cell" type="roundTextured" title="Konto" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HyL-l1-wQx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="accountClicked:" target="ifL-hX-7qp" id="3IA-nh-q8f"/>
+                                    </connections>
                                 </buttonCell>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O3E-SC-ZG7"/>
                         <viewLayoutGuide key="layoutMargins" id="XNa-At-06o"/>
                     </view>
+                    <connections>
+                        <outlet property="accountClick" destination="KPJ-No-WKQ" id="47l-c3-MZo"/>
+                        <outlet property="settingsClicked" destination="KPJ-No-WKQ" id="Xbh-5Q-8cr"/>
+                    </connections>
                 </viewController>
                 <customObject id="cUL-l1-tdC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1791.5" y="-149"/>
         </scene>
-        <!--Account View Controller-->
+        <!--AccountViewController-->
         <scene sceneID="3Ij-bs-WFy">
             <objects>
-                <viewController id="LdW-qe-Ivq" customClass="AccountViewController" customModule="eszut_macos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AccountViewController" storyboardIdentifier="AccountView" id="LdW-qe-Ivq" customClass="AccountViewController" customModule="eszut_macos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="gY6-Du-7By">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -846,10 +856,10 @@
             </objects>
             <point key="canvasLocation" x="1176" y="-488"/>
         </scene>
-        <!--View Controller-->
+        <!--SettingsViewController-->
         <scene sceneID="dWE-2i-F3w">
             <objects>
-                <viewController id="3wd-XH-CVS" sceneMemberID="viewController">
+                <viewController title="SettingsViewController" storyboardIdentifier="SettingsView" id="3wd-XH-CVS" sceneMemberID="viewController">
                     <view key="view" id="Okc-6e-4hG">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
